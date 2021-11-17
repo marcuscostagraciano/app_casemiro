@@ -6,4 +6,4 @@ A realização do aplicativo em Java não é nada mais (nada menos) do que uma a
 
 
 ### Integrantes:
-Alunos: Marcus Vinícius da Costa Graciano, Vinícius Acordi Soethe - Turma: BSI2
+Alunos: Marcus Vinícius da Costa Graciano, Vinícius Acordi Soethe - <br>Turma: BSI2
