@@ -5,6 +5,7 @@
  */
 package controller;
 
+import java.text.DecimalFormat;
 import utilitarios.Calculadora;
 
 /**
@@ -29,8 +30,9 @@ public class Controle {
     salarioMinimoPorHora;*/
     
     public Controle(){
-        calc = new Calculadora();
+        calc = new Calculadora();        
     }
+    DecimalFormat df = new DecimalFormat("###.##");
     
     public void setIdadeAtual(String idadeAtual){
         calc.setIdadeAtual(Integer.parseInt(idadeAtual));
@@ -40,12 +42,20 @@ public class Controle {
         calc.setIdadeEntradaEscola(Integer.parseInt(idadeEntrada));
     }
     
+    public void setIdadeComecouTrabalhar(String idadeComecouTrabalhar){
+        calc.setIdadeComecouTrabalhar(Integer.parseInt(idadeComecouTrabalhar));
+    }
+    
     public String getIdadeAtual(){
         return String.valueOf(calc.getIdadeAtual());
     }
     
     public String getIdadeEntradaEscola(){
         return String.valueOf(calc.getIdadeEntradaEscola());
+    }
+    
+    public String getIdadeComecouTrabalhar() {
+        return String.valueOf(calc.getIdadeComecouTrabalhar());
     }
     
     public String getHorasPorDia(){
@@ -69,19 +79,23 @@ public class Controle {
     }
     
     public String getSalarioMinimo() {
-        return String.valueOf(calc.getSalarioMinimo());
+        return "R$ " + df.format(calc.getSalarioMinimo());
     }
     
     public String getSalarioMinimoPorHora() {
-        return String.format("%.2f",calc.getSalarioMinimoPorHora());
+        return "R$ " + df.format(calc.getSalarioMinimoPorHora());
     }
 
     public String getValorInvestidoTotal() {
-        return String.valueOf(calc.getValorInvestidoTotal());
+        return "R$ " + df.format(calc.getValorInvestidoTotal());
     }
 
     public String getValorDeReposicao() {
-        return String.valueOf(calc.getValorDeReposicao());
+        return "R$ " + df.format(calc.getValorDeReposicao());
+    }
+    
+    public String getValorMensalReposicao() {        
+        return "R$ " + df.format(calc.getValorMensalReposicao());
     }
         
 }
