@@ -10,9 +10,9 @@ package utilitarios;
  * @author Marcus
  */
 public class Calculadora {
-    private int idadeAtual, idadeEntradaEscola,
+    private int idadeAtual, idadeEntradaEscola, idadeComecouTrabalhar,
             horasPorDia, horasPorMes, horasPorAno, horasEscolaresTotais, horasTrabalhadorBr;
-    private double valorInvestidoTotal, valorDeReposicao, salarioMinimo, salarioMinimoPorHora;
+    private double valorInvestidoTotal, valorDeReposicao, valorMensalReposicao, salarioMinimo, salarioMinimoPorHora;
     
     
     public int getIdadeAtual() {
@@ -21,6 +21,10 @@ public class Calculadora {
 
     public int getIdadeEntradaEscola() {
         return idadeEntradaEscola;
+    }
+    
+    public int getIdadeComecouTrabalhar() {
+        return idadeComecouTrabalhar;
     }
 
     public int getHorasPorDia() {
@@ -48,12 +52,22 @@ public class Calculadora {
     }
 
     public double getValorInvestidoTotal() {
-        return valorInvestidoTotal = getHorasEscolaresTotais() * getSalarioMinimoPorHora();
+        valorInvestidoTotal = getHorasEscolaresTotais() * getSalarioMinimoPorHora();
+        return Math.round(valorInvestidoTotal);
     }
 
     public double getValorDeReposicao() {
-        valorDeReposicao = getValorInvestidoTotal() / (70 - getIdadeAtual());
+        int diffIdades = getIdadeAtual() - getIdadeComecouTrabalhar();
+        if (diffIdades <= 0)
+            diffIdades = 1;
+        
+        valorDeReposicao = getValorInvestidoTotal() / (diffIdades);
         return valorDeReposicao;
+    }
+    
+    public double getValorMensalReposicao() {   
+        valorMensalReposicao = getValorDeReposicao()/12;
+        return valorMensalReposicao;
     }
 
     public double getSalarioMinimo() {
@@ -66,6 +80,10 @@ public class Calculadora {
 
     public void setIdadeAtual(int idadeAtual) {
         this.idadeAtual = idadeAtual;
+    }
+    
+    public void setIdadeComecouTrabalhar(int idadeComecouTrabalhar) {
+        this.idadeComecouTrabalhar = idadeComecouTrabalhar;
     }
 
     public void setIdadeEntradaEscola(int idadeEntradaEscola) {
