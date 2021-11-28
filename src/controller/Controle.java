@@ -46,6 +46,10 @@ public class Controle {
         calc.setIdadeComecouTrabalhar(Integer.parseInt(idadeComecouTrabalhar));
     }
     
+    public void setSalarioMin(Object salarioMin){        
+        calc.setSalarioMinimo(Double.parseDouble(salarioMin.toString()));
+    }
+    
     public String getIdadeAtual(){
         return String.valueOf(calc.getIdadeAtual());
     }
