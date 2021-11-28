@@ -71,7 +71,7 @@ public class Calculadora {
     }
 
     public double getSalarioMinimo() {
-        return salarioMinimo = 1100;
+        return salarioMinimo;
     }
 
     public double getSalarioMinimoPorHora() {
@@ -95,6 +95,10 @@ public class Calculadora {
             this.horasPorDia = 10;       
         else
             this.horasPorDia = 6;
+    }
+    
+    public void setSalarioMinimo(double salario) {
+        this.salarioMinimo = salario;
     }
     
 }
