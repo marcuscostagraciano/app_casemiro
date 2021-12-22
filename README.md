@@ -15,4 +15,4 @@ Alunos: Marcus Vinícius da Costa Graciano, Vinícius Acordi Soethe;
 Uma sessão única em agradecimento pelo auxílio, compreensão e paciência de: 
   - Flávia Marcelino Teixeira,
   - [Gianluca Starke](https://github.com/XerlockHomeless),
-  - [Rodrigo Batista Pereira](marcuscostagraciano/nHentai-Code-Generator).
+  - [Rodrigo Batista Pereira](https://github.com/rodrigobpe).
