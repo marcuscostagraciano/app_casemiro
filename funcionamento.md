@@ -23,7 +23,7 @@ A aplicação conta com 4 entradas livres e 1 com valores pré-programados:
 ### Fórmulas e raciocínio usados:
 Para começar, faz-se necessária a implementação de uma condicional com a idade de entrada na escola para obteção da média de horas diárias na mesma. Logo:
 
-Se (idadeEntradaEscola < 6) { mediaHorasEscola = 10; }
+Se (idadeEntradaEscola < 6) { mediaHorasEscola = 10; }<br>
 Senão { mediaHorasEscola = 6; }
 
 Após estabelecer a média de horas na escola, acontece o cálculo do valor total investido:
