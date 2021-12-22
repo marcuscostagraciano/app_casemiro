@@ -1,8 +1,8 @@
 # Funcionamento:
 A aplicação tem arquitetura o padrão MVC (Model, View, Controller) por vários motivos, dentre eles a alta eficiência e segurança.
 
-##Passo 1:
-###Obtenção inicial de dados:
+## Passo 1:
+### Obtenção inicial de dados:
   - A aplicação conta com 4 entradas livres e 1 com valores pré-programados:
     - Entradas livres:
       - Idade atual;
