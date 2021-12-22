@@ -5,7 +5,7 @@ Aplicativo realizado em base na tabela proposta e elaborada nas aulas de sociolo
 A realização do aplicativo em Java não é nada mais (nada menos) do que um desafio para nós mesmos para o aprendizado de uma nova linguagem.
 
 ### Funcionamento:
-Para entender mais sobre o [funcionamento](https://github.com/marcuscostagraciano/app_casemiro/blob/main/funcionamento.md)
+Para entender mais sobre o [funcionamento](https://github.com/marcuscostagraciano/app_casemiro/blob/main/funcionamento.md). O aplicativo encontra-se na pasta dist, nomeado como app_casemiro.jar
 
 ### Integrantes:
 Alunos: Marcus Vinícius da Costa Graciano, Vinícius Acordi Soethe;
