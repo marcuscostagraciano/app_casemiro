@@ -9,12 +9,46 @@ package utilitarios;
  *
  * @author Marcus
  */
-public class Calculadora {
-    private int idadeAtual, idadeEntradaEscola, idadeComecouTrabalhar,
-            horasPorDia, horasPorMes, horasPorAno, horasEscolaresTotais, horasTrabalhadorBr;
-    private double valorInvestidoTotal, valorDeReposicao, valorMensalReposicao, salarioMinimo, salarioMinimoPorHora;
+public class Calculadora {    
+        private int idadeAtual, idadeEntradaEscola, idadeComecouTrabalhar, idadeEstudando, 
+                idadeParaAposentar, horasPorDia;
     
+    private double valorInvestidoTotal, valorDeReposicao, valorMensalReposicao, valorPago,
+                   valorRestituir, horasPorMes, horasPorAno, horasEscolaresTotais,
+                   salarioMinimo , salarioMinimoPorHora; 
+
+    final int horasTrabalhadorBr = 240;  
     
+    // Setters de idade //
+    public void setIdadeAtual(int idadeAtual) {
+        this.idadeAtual = idadeAtual;
+    }
+
+    public void setIdadeEntradaEscola(int idadeEntradaEscola) {
+        this.idadeEntradaEscola = idadeEntradaEscola;
+        setHorasPorDia(idadeEntradaEscola);
+    }
+    
+    public void setIdadeComecouTrabalhar(int idadeComecouTrabalhar) {
+        this.idadeComecouTrabalhar = idadeComecouTrabalhar;
+    }
+    
+    public void setIdadeEstudando(int idadeEstudando){
+        this.idadeEstudando = idadeEstudando;
+    }
+
+    public void setHorasPorDia(int idade) {
+        if(idade < 6) {
+            this.horasPorDia = 10; 
+        } else {
+            this.horasPorDia = 6;}
+    }
+    
+    public void setSalarioMinimo(double salario) {
+        this.salarioMinimo = salario;
+    }
+
+    // Getters de idades //
     public int getIdadeAtual() {
         return idadeAtual;
     }
@@ -26,42 +60,75 @@ public class Calculadora {
     public int getIdadeComecouTrabalhar() {
         return idadeComecouTrabalhar;
     }
+    
+    public int getIdadeEstudando(){
+        return idadeEstudando;
+    }
+    
+    public int getIdadeParaAposentar(){
+        if (getIdadeAtual() < 65){
+           idadeParaAposentar = 65 - getIdadeAtual();} 
+        else 
+            {idadeParaAposentar = 1;}
+        
+        return idadeParaAposentar;
+    }  
 
+    // Getters de horas //
     public int getHorasPorDia() {
-        setHorasPorDia();
         return horasPorDia;
     }
 
-    public int getHorasPorMes() {
-        horasPorMes = getHorasPorDia() * 5 * 4;
+    public double getHorasPorMes() {
+        horasPorMes = getHorasPorDia()* 5 * 4.5;
         return horasPorMes;
     }
 
-    public int getHorasPorAno() {
+    public double getHorasPorAno() {
         horasPorAno = getHorasPorMes() * 12;
         return horasPorAno;
     }
 
-    public int getHorasEscolaresTotais() {
-        horasEscolaresTotais = getHorasPorAno() * getIdadeAtual();
+    public double getHorasEscolaresTotais() {
+        horasEscolaresTotais = getHorasPorAno() * getIdadeEstudando();
         return horasEscolaresTotais;
     }
 
     public int getHorasTrabalhadorBr() {        
-        return horasTrabalhadorBr = 240;
+        return horasTrabalhadorBr;
+    }  
+
+    // Getter de valores //    
+    public double getSalarioMinimo() {
+        return salarioMinimo;
+    }
+
+    public double getSalarioMinimoPorHora() {
+        salarioMinimoPorHora = getSalarioMinimo() / getHorasTrabalhadorBr();
+        return salarioMinimoPorHora;
     }
 
     public double getValorInvestidoTotal() {
         valorInvestidoTotal = getHorasEscolaresTotais() * getSalarioMinimoPorHora();
         return Math.round(valorInvestidoTotal);
     }
+    
+    public double getValorPago(){
+        if (getIdadeAtual() == getIdadeComecouTrabalhar()){
+            valorPago = 0;} 
+        else {
+            valorPago = Math.abs((getIdadeAtual() - getIdadeComecouTrabalhar())) * getSalarioMinimo();}
+        
+        return valorPago;
+    }
+    
+    public double getValorRestituir(){
+        valorRestituir = Math.abs(getValorInvestidoTotal() - getValorPago());
+        return valorRestituir;
+    }
 
     public double getValorDeReposicao() {
-        int diffIdades = getIdadeAtual() - getIdadeComecouTrabalhar();
-        if (diffIdades <= 0)
-            diffIdades = 1;
-        
-        valorDeReposicao = getValorInvestidoTotal() / (diffIdades);
+        valorDeReposicao = getValorRestituir() / getIdadeParaAposentar();
         return valorDeReposicao;
     }
     
@@ -69,36 +136,4 @@ public class Calculadora {
         valorMensalReposicao = getValorDeReposicao()/12;
         return valorMensalReposicao;
     }
-
-    public double getSalarioMinimo() {
-        return salarioMinimo;
-    }
-
-    public double getSalarioMinimoPorHora() {
-        return salarioMinimoPorHora = getSalarioMinimo() / getHorasTrabalhadorBr();
-    }
-
-    public void setIdadeAtual(int idadeAtual) {
-        this.idadeAtual = idadeAtual;
-    }
-    
-    public void setIdadeComecouTrabalhar(int idadeComecouTrabalhar) {
-        this.idadeComecouTrabalhar = idadeComecouTrabalhar;
-    }
-
-    public void setIdadeEntradaEscola(int idadeEntradaEscola) {
-        this.idadeEntradaEscola = idadeEntradaEscola;
-    }
-
-    public void setHorasPorDia() {
-        if(idadeEntradaEscola < 6)
-            this.horasPorDia = 10;       
-        else
-            this.horasPorDia = 6;
-    }
-    
-    public void setSalarioMinimo(double salario) {
-        this.salarioMinimo = salario;
-    }
-    
 }

@@ -15,25 +15,12 @@ import utilitarios.Calculadora;
 public class Controle {
     private Calculadora calc;
     
-    /*private int 
-    idadeAtual, 
-    idadeEntradaEscola,
-    horasPorDia, 
-    horasPorMes, 
-    horasPorAno, 
-    horasEscolaresTotais, 
-    horasTrabalhadorBr;
-    
-    valorInvestidoTotal, 
-    valorDeReposicao, 
-    salarioMinimo, 
-    salarioMinimoPorHora;*/
-    
     public Controle(){
         calc = new Calculadora();        
     }
     DecimalFormat df = new DecimalFormat("###.##");
     
+    // Setters de idade //
     public void setIdadeAtual(String idadeAtual){
         calc.setIdadeAtual(Integer.parseInt(idadeAtual));
     }
@@ -46,10 +33,16 @@ public class Controle {
         calc.setIdadeComecouTrabalhar(Integer.parseInt(idadeComecouTrabalhar));
     }
     
+    public void setIdadeEstudando(String idadeEstudando){
+        calc.setIdadeEstudando(Integer.parseInt(idadeEstudando));
+    }
+    
+    // Setters de salário //
     public void setSalarioMin(Object salarioMin){        
         calc.setSalarioMinimo(Double.parseDouble(salarioMin.toString()));
     }
     
+    // Getters de idade //
     public String getIdadeAtual(){
         return String.valueOf(calc.getIdadeAtual());
     }
@@ -62,6 +55,7 @@ public class Controle {
         return String.valueOf(calc.getIdadeComecouTrabalhar());
     }
     
+    // Getters de horas //
     public String getHorasPorDia(){
         return String.valueOf(calc.getHorasPorDia());
     }
@@ -82,6 +76,7 @@ public class Controle {
         return String.valueOf(calc.getHorasTrabalhadorBr());
     }
     
+    // Getters de valores //
     public String getSalarioMinimo() {
         return "R$ " + df.format(calc.getSalarioMinimo());
     }
@@ -101,5 +96,12 @@ public class Controle {
     public String getValorMensalReposicao() {        
         return "R$ " + df.format(calc.getValorMensalReposicao());
     }
-        
+    
+    public String getValorJaPago() {        
+        return "R$ " + df.format(calc.getValorPago());
+    }
+    
+    public String getValorFaltaRestituir() {        
+        return "R$ " + df.format(calc.getValorRestituir());
+    }
 }

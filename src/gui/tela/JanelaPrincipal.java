@@ -53,6 +53,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         txtValorReposicao = new javax.swing.JTextField();
         lblHorasDia4 = new javax.swing.JLabel();
         txtValorReposicaoMensal = new javax.swing.JTextField();
+        lblHorasDia5 = new javax.swing.JLabel();
+        txtValorJaPago = new javax.swing.JTextField();
+        lblHorasDia6 = new javax.swing.JLabel();
+        txtFaltaRestituir = new javax.swing.JTextField();
         jpnlTopLeft = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -61,6 +65,8 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         txtIdadeEntradaEscola = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtIdadeEstudando = new javax.swing.JTextField();
         jpnlBottomLeft = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -127,32 +133,61 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         lblHorasDia.setText("<html>Horas/dia<br> na escola:<html>");
 
         txtHorasDia.setEditable(false);
+        txtHorasDia.setColumns(10);
         txtHorasDia.setText("0");
-        txtHorasDia.setToolTipText("");
+        txtHorasDia.setToolTipText(null);
 
         lblHorasDia1.setText("<html>Total de horas<br>escolares:<html>");
 
         txtHorasEscolaresTotais.setEditable(false);
+        txtHorasEscolaresTotais.setColumns(10);
         txtHorasEscolaresTotais.setText("0");
-        txtHorasEscolaresTotais.setToolTipText("");
+        txtHorasEscolaresTotais.setToolTipText(null);
 
         lblHorasDia2.setText("<html>Valor total<br>investido:<html>");
 
         txtValorInvestido.setEditable(false);
+        txtValorInvestido.setColumns(10);
         txtValorInvestido.setText("0");
-        txtValorInvestido.setToolTipText("");
+        txtValorInvestido.setToolTipText(null);
 
         lblHorasDia3.setText("<html>Valor anual<br>de reposição:<html>");
 
         txtValorReposicao.setEditable(false);
+        txtValorReposicao.setColumns(10);
         txtValorReposicao.setText("0");
-        txtValorReposicao.setToolTipText("");
+        txtValorReposicao.setToolTipText(null);
 
         lblHorasDia4.setText("<html>Valor mensal<br>para reposição:<html>");
 
         txtValorReposicaoMensal.setEditable(false);
+        txtValorReposicaoMensal.setColumns(10);
         txtValorReposicaoMensal.setText("0");
-        txtValorReposicaoMensal.setToolTipText("");
+        txtValorReposicaoMensal.setToolTipText(null);
+        txtValorReposicaoMensal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValorReposicaoMensalActionPerformed(evt);
+            }
+        });
+
+        lblHorasDia5.setText("<html>Valor já<br>pago:<html>");
+
+        txtValorJaPago.setEditable(false);
+        txtValorJaPago.setColumns(10);
+        txtValorJaPago.setText("0");
+        txtValorJaPago.setToolTipText(null);
+
+        lblHorasDia6.setText("<html>Falta<br>restituir:<html>");
+
+        txtFaltaRestituir.setEditable(false);
+        txtFaltaRestituir.setColumns(10);
+        txtFaltaRestituir.setText("0");
+        txtFaltaRestituir.setToolTipText(null);
+        txtFaltaRestituir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFaltaRestituirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpnlRightLayout = new javax.swing.GroupLayout(jpnlRight);
         jpnlRight.setLayout(jpnlRightLayout);
@@ -161,18 +196,28 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGroup(jpnlRightLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblHorasDia4)
-                    .addComponent(lblHorasDia3)
-                    .addComponent(lblHorasDia2)
-                    .addComponent(lblHorasDia1)
-                    .addComponent(lblHorasDia))
-                .addGap(18, 18, 18)
-                .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtHorasEscolaresTotais, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                    .addComponent(txtValorReposicaoMensal, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtValorReposicao, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtValorInvestido)
-                    .addComponent(txtHorasDia))
+                    .addGroup(jpnlRightLayout.createSequentialGroup()
+                        .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblHorasDia4)
+                            .addComponent(lblHorasDia3)
+                            .addComponent(lblHorasDia2)
+                            .addComponent(lblHorasDia1)
+                            .addComponent(lblHorasDia))
+                        .addGap(18, 18, 18)
+                        .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtHorasEscolaresTotais, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                            .addComponent(txtValorReposicao, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtValorInvestido)
+                            .addComponent(txtHorasDia)
+                            .addComponent(txtValorReposicaoMensal, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(jpnlRightLayout.createSequentialGroup()
+                        .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblHorasDia5)
+                            .addComponent(lblHorasDia6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtFaltaRestituir)
+                            .addComponent(txtValorJaPago))))
                 .addContainerGap())
         );
         jpnlRightLayout.setVerticalGroup(
@@ -182,23 +227,31 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHorasDia)
                     .addComponent(txtHorasDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblHorasDia1)
                     .addComponent(txtHorasEscolaresTotais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblHorasDia2)
                     .addComponent(txtValorInvestido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHorasDia5)
+                    .addComponent(txtValorJaPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHorasDia6)
+                    .addComponent(txtFaltaRestituir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblHorasDia3)
                     .addComponent(txtValorReposicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpnlRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblHorasDia4)
                     .addComponent(txtValorReposicaoMensal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -206,7 +259,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("<html>Idade entrada<br>na escola:</html>");
-        jLabel2.setToolTipText("");
+        jLabel2.setToolTipText(null);
 
         txtIdadeAtual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,7 +276,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("<html>Idade começou<br>trabalhar:</html>");
-        jLabel3.setToolTipText("");
+        jLabel3.setToolTipText(null);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setText("<html>Idade<br>estudando:</html>");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Salário mínimo:");
@@ -234,6 +290,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel7.setToolTipText("");
 
         txtSalarioMinHora.setEditable(false);
+        txtSalarioMinHora.setColumns(5);
         txtSalarioMinHora.setText(controle.getSalarioMinimoPorHora());
         txtSalarioMinHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,7 +335,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jpnlBottomLeftLayout.setVerticalGroup(
             jpnlBottomLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnlBottomLeftLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jpnlBottomLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(cbbSalarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -289,41 +346,47 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpnlBottomLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txtSalarioMinHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(txtSalarioMinHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout jpnlTopLeftLayout = new javax.swing.GroupLayout(jpnlTopLeft);
         jpnlTopLeft.setLayout(jpnlTopLeftLayout);
         jpnlTopLeftLayout.setHorizontalGroup(
             jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnlBottomLeft, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jpnlTopLeftLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jpnlBottomLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
             .addGroup(jpnlTopLeftLayout.createSequentialGroup()
                 .addGroup(jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnlTopLeftLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGap(16, 16, 16)
+                        .addGroup(jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jpnlTopLeftLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtIdadeAtual))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpnlTopLeftLayout.createSequentialGroup()
+                            .addGroup(jpnlTopLeftLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtIdadeEntradaEscola, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpnlTopLeftLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                            .addGroup(jpnlTopLeftLayout.createSequentialGroup()
+                                .addGroup(jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtComecouTrabalhar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtComecouTrabalhar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIdadeEstudando, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jpnlTopLeftLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addGap(50, 50, 50)
                         .addComponent(btnCalcular)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnlTopLeftLayout.setVerticalGroup(
             jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnlTopLeftLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtIdadeAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -334,16 +397,20 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                         .addComponent(txtIdadeEntradaEscola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpnlTopLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jpnlTopLeftLayout.createSequentialGroup()
                         .addGap(5, 5, 5)
-                        .addComponent(txtComecouTrabalhar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3))
+                        .addComponent(txtComecouTrabalhar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtIdadeEstudando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpnlTopLeftLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCalcular)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpnlBottomLeft, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(jpnlBottomLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -353,17 +420,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(2, 2, 2)
                 .addComponent(jpnlTopLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpnlRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jpnlRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jpnlTopLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpnlRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpnlRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jpnlTopLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -378,11 +447,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         controle.setIdadeAtual(txtIdadeAtual.getText());
         controle.setIdadeEntradaEscola(txtIdadeEntradaEscola.getText());
         controle.setIdadeComecouTrabalhar(txtComecouTrabalhar.getText());
-        controle.setSalarioMin(cbbSalarios.getSelectedItem());
+        controle.setIdadeEstudando(txtIdadeEstudando.getText());
+        controle.setSalarioMin(cbbSalarios.getSelectedItem());        
         
         txtHorasDia.setText(controle.getHorasPorDia());
         txtHorasEscolaresTotais.setText(controle.getHorasEscolaresTotais());
         txtValorInvestido.setText(controle.getValorInvestidoTotal());
+        txtValorJaPago.setText(controle.getValorJaPago());
+        txtFaltaRestituir.setText(controle.getValorFaltaRestituir());
         txtValorReposicao.setText(controle.getValorDeReposicao());
         txtValorReposicaoMensal.setText(controle.getValorMensalReposicao());
         txtSalarioMinHora.setText(controle.getSalarioMinimoPorHora());
@@ -395,6 +467,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private void txtHorasTrabalhadorBrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHorasTrabalhadorBrActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHorasTrabalhadorBrActionPerformed
+
+    private void txtValorReposicaoMensalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorReposicaoMensalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValorReposicaoMensalActionPerformed
+
+    private void txtFaltaRestituirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFaltaRestituirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFaltaRestituirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -442,6 +522,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -460,14 +541,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblHorasDia2;
     private javax.swing.JLabel lblHorasDia3;
     private javax.swing.JLabel lblHorasDia4;
+    private javax.swing.JLabel lblHorasDia5;
+    private javax.swing.JLabel lblHorasDia6;
     private javax.swing.JTextField txtComecouTrabalhar;
+    private javax.swing.JTextField txtFaltaRestituir;
     private javax.swing.JTextField txtHorasDia;
     private javax.swing.JTextField txtHorasEscolaresTotais;
     private javax.swing.JTextField txtHorasTrabalhadorBr;
     private javax.swing.JTextField txtIdadeAtual;
     private javax.swing.JTextField txtIdadeEntradaEscola;
+    private javax.swing.JTextField txtIdadeEstudando;
     private javax.swing.JTextField txtSalarioMinHora;
     private javax.swing.JTextField txtValorInvestido;
+    private javax.swing.JTextField txtValorJaPago;
     private javax.swing.JTextField txtValorReposicao;
     private javax.swing.JTextField txtValorReposicaoMensal;
     // End of variables declaration//GEN-END:variables
