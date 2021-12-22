@@ -15,5 +15,7 @@ A aplicação conta com 4 entradas livres e 1 com valores pré-programados:
 ### Usos do dados coletados pelo código:
 |Dados| Uso(s)|
 |-----|-------|
-|||
-|||
+|Idade atual|Cálculo de quantos anos faltam para aposentar (usando 65 como idade de aposentadoria|Cálculo do valor já restituido|
+|Idade de entrada na escola||
+|Idade que começou trabalhar||
+|Idade estudando||
