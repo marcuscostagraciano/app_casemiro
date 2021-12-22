@@ -10,3 +10,9 @@ Para entender mais sobre o [funcionamento](https://github.com/marcuscostagracian
 ### Integrantes:
 Alunos: Marcus Vinícius da Costa Graciano, Vinícius Acordi Soethe;
 <br>Turma: BSI2.
+
+### Agradecimentos especiais:
+Uma sessão única em agradecimento pelo auxílio, compreensão e paciência de: 
+  - Flávia Marcelino Teixeira,
+  - Gianluca Starke,
+  - Rodrigo Batista Pereira.
