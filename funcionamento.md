@@ -26,7 +26,7 @@ Para começar, faz-se necessária a implementação de uma condicional com a ida
 Se (idadeEntradaEscola < 6) { mediaHorasEscola = 10; }<br>
 Senão { mediaHorasEscola = 6; }
 
-Após estabelecer a média de horas na escola, acontece o cálculo do valor total investido:
+Após estabelecer a média de horas na escola, acontece o cálculo do valor total investido:<br>
 **tempoInvestido** = idadeEntradaEscola * 5 * 4,5 * 12 * idadeEstudando;<br>
 (5 dias na semana; 4,5 semanas = 1 mês; vezes 12 = 1 ano; vezes idade estudando)
 
