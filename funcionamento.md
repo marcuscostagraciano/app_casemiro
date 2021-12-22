@@ -21,4 +21,23 @@ A aplicação conta com 4 entradas livres e 1 com valores pré-programados:
 |Idade estudando|Horas escolares totais|
 
 ### Fórmulas e raciocínio usados:
-Para começar, faz-se necessária a implementação de uma condicional com a idade de entrada na escola para obteção da média de horas diárias na mesma
+Para começar, faz-se necessária a implementação de uma condicional com a idade de entrada na escola para obteção da média de horas diárias na mesma. Logo:
+
+Se (idadeEntradaEscola < 6) { mediaHorasEscola = 10; }
+Senão { mediaHorasEscola = 6; }
+
+Após estabelecer a média de horas na escola, acontece o cálculo do valor total investido:
+**tempoInvestido** = idadeEntradaEscola * 5 * 4,5 * 12 * idadeEstudando;
+(5 dias na semana; 4,5 semanas = 1 mês; vezes 12 = 1 ano; vezes idade estudando)
+
+**valorInvestido** = tempoInvestido * salarioMinimoBrasileiroHora;
+(O salário mínimo por hora é calculado através da divisão do salário mínimo pelas horas de um trabalhador brasileiro)
+
+**valorJaPago** = (idadeAtual - idadeComecouTrabalhar) * salarioMinimo;
+
+**valorParaRestituir** = valorInvestido - valorJaPago;
+
+**salarioIdealPorAno** = valorParaRestituir / idadeParaAposentar;
+(A idade para aposentar será calculada através da fórmula: 65 - idadeAtual)
+
+**salarioIdealPorMes** = salarioIdealPorAno / 12;
