@@ -27,17 +27,17 @@ Se (idadeEntradaEscola < 6) { mediaHorasEscola = 10; }
 Senão { mediaHorasEscola = 6; }
 
 Após estabelecer a média de horas na escola, acontece o cálculo do valor total investido:
-**tempoInvestido** = idadeEntradaEscola * 5 * 4,5 * 12 * idadeEstudando;
+**tempoInvestido** = idadeEntradaEscola * 5 * 4,5 * 12 * idadeEstudando;<br>
 (5 dias na semana; 4,5 semanas = 1 mês; vezes 12 = 1 ano; vezes idade estudando)
 
-**valorInvestido** = tempoInvestido * salarioMinimoBrasileiroHora;
+**valorInvestido** = tempoInvestido * salarioMinimoBrasileiroHora;<br>
 (O salário mínimo por hora é calculado através da divisão do salário mínimo pelas horas de um trabalhador brasileiro)
 
 **valorJaPago** = (idadeAtual - idadeComecouTrabalhar) * salarioMinimo;
 
 **valorParaRestituir** = valorInvestido - valorJaPago;
 
-**salarioIdealPorAno** = valorParaRestituir / idadeParaAposentar;
+**salarioIdealPorAno** = valorParaRestituir / idadeParaAposentar;<br>
 (A idade para aposentar será calculada através da fórmula: 65 - idadeAtual)
 
 **salarioIdealPorMes** = salarioIdealPorAno / 12;
