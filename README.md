@@ -13,6 +13,6 @@ Alunos: Marcus Vinícius da Costa Graciano, Vinícius Acordi Soethe;
 
 ### Agradecimentos especiais:
 Uma sessão única em agradecimento pelo auxílio, compreensão e paciência de: 
-  - Flávia Marcelino Teixeira,
+  - [Flávia Marcelino Teixeira](https://github.com/FlaviaMTeixeira),
   - [Gianluca Starke](https://github.com/XerlockHomeless),
   - [Rodrigo Batista Pereira](https://github.com/rodrigobpe).
